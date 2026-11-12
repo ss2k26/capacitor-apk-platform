@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{APP_NAME}}</title>
+<style>
+  :root { --accent: {{ACCENT}}; color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         font-family: system-ui, sans-serif; background: Canvas; color: CanvasText; padding: 24px; }
+  main { max-width: 420px; text-align: center; }
+  .dot { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); margin: 0 auto 20px; opacity: .9; }
+  h1 { font-size: 1.25rem; margin: 0 0 8px; }
+  p  { margin: 6px 0; opacity: .75; font-size: .95rem; }
+  code { display: block; margin-top: 14px; font-size: .8rem; opacity: .6; word-break: break-all; }
+  button { margin-top: 22px; padding: 12px 28px; border: 0; border-radius: 10px; font-size: 1rem;
+           background: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <div class="dot"></div>
+  <h1>Can't reach the server</h1>
+  <p>Check that your phone is on the right network (Wi-Fi / VPN) and that the server is running.</p>
+  <p id="reason"></p>
+  <code id="url"></code>
+  <button id="retry">Try again</button>
+</main>
+<script>
+  var q = new URLSearchParams(location.search);
+  var target = q.get('u') || '';
+  document.getElementById('url').textContent = target;
+  document.getElementById('reason').textContent = q.get('r') || '';
+  function retry() { if (target) location.href = target; }
+  document.getElementById('retry').addEventListener('click', retry);
+  setInterval(function () { if (navigator.onLine) retry(); }, 15000);
+</script>
+</body>
+</html>

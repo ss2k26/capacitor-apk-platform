@@ -1,0 +1,61 @@
+{
+  "appId": "com.mycompany.example",
+  "appName": "Example App",
+  "version": { "name": "1.0.0", "code": 1 },
+
+  "server": {
+    "url": "https://192.168.1.10:8443",
+    "allowNavigation": [],
+    "cleartext": false
+  },
+
+  "ssl": {
+    "allowSelfSigned": true,
+    "pinSha256": ["AA:BB:CC:...64 hex chars... (get it with: platform pin example --save)"]
+  },
+
+  "branding": {
+    "icon": "assets/icon.png",
+    "splash": "assets/splash.png",
+    "splashDark": null,
+    "iconBackgroundColor": "#3b6ea5",
+    "iconBackgroundColorDark": "#111111",
+    "splashBackgroundColor": "#3b6ea5",
+    "splashBackgroundColorDark": "#111111"
+  },
+
+  "splash": {
+    "autoHide": true,
+    "showDurationMs": 1500,
+    "fadeOutMs": 300,
+    "showSpinner": false,
+    "scaleType": "CENTER_CROP"
+  },
+
+  "statusBar": {
+    "style": "DARK",
+    "backgroundColor": "#3b6ea5",
+    "overlaysWebView": false
+  },
+
+  "android": {
+    "orientation": "default",
+    "permissions": ["CAMERA", "POST_NOTIFICATIONS"],
+    "minSdk": null,
+    "targetSdk": null,
+    "compileSdk": null,
+    "keepScreenOn": false,
+    "secureWindow": false,
+    "allowMixedContent": false,
+    "webDebugging": false,
+    "userAgentSuffix": "MyCompanyApp/1.0",
+    "offlinePage": true
+  },
+
+  "extraPlugins": [],
+
+  "googleLogin": {
+    "enabled": true,
+    "webClientId": "1234567890-xxxx.apps.googleusercontent.com"
+  }
+}

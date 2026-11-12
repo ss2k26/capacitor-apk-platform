@@ -1,0 +1,25 @@
+{
+  "name": "capacitor-apk-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build many Capacitor Android apps (WebView wrappers for Laravel sites) from one place on Windows 10.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "platform": "node tools/cli.js",
+    "doctor": "node tools/cli.js doctor",
+    "list": "node tools/cli.js list"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/splash-screen": "^8.0.0",
+    "@capacitor/status-bar": "^8.0.0",
+    "@capgo/capacitor-social-login": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.0.0"
+  }
+}

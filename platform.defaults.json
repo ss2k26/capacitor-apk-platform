@@ -1,0 +1,59 @@
+{
+  "version": { "name": "1.0.0", "code": 1 },
+
+  "server": {
+    "url": "",
+    "allowNavigation": [],
+    "cleartext": false
+  },
+
+  "ssl": {
+    "allowSelfSigned": false,
+    "pinSha256": []
+  },
+
+  "branding": {
+    "icon": "assets/icon.png",
+    "splash": "assets/splash.png",
+    "splashDark": null,
+    "iconBackgroundColor": "#ffffff",
+    "iconBackgroundColorDark": "#111111",
+    "splashBackgroundColor": "#ffffff",
+    "splashBackgroundColorDark": "#111111"
+  },
+
+  "splash": {
+    "autoHide": true,
+    "showDurationMs": 1500,
+    "fadeOutMs": 300,
+    "showSpinner": false,
+    "scaleType": "CENTER_CROP"
+  },
+
+  "statusBar": {
+    "style": null,
+    "backgroundColor": null,
+    "overlaysWebView": null
+  },
+
+  "android": {
+    "orientation": "default",
+    "permissions": [],
+    "minSdk": null,
+    "targetSdk": null,
+    "compileSdk": null,
+    "keepScreenOn": false,
+    "secureWindow": false,
+    "allowMixedContent": false,
+    "webDebugging": false,
+    "userAgentSuffix": "",
+    "offlinePage": true
+  },
+
+  "extraPlugins": [],
+
+  "googleLogin": {
+    "enabled": false,
+    "webClientId": ""
+  }
+}

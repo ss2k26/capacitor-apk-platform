@@ -1,0 +1,7 @@
+node_modules/
+build/
+output/
+apps/*/keystore.properties
+apps/*/*.jks
+apps/*/*.keystore
+*.log
