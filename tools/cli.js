@@ -125,7 +125,7 @@ async function cmdPin(pos, flags) {
   log.info(`trusted by a public CA: ${authorized ? 'yes (no pinning needed)' : 'no (self-signed / private CA)'}`);
   if (new Date(cert.valid_to) < new Date()) log.warn('Certificate is EXPIRED.');
   else if (new Date(cert.valid_to) - Date.now() < 30 * 864e5) log.warn('Certificate expires within 30 days – you must rebuild the app after renewing it (pin changes).');
-  if (!(cert.subjectaltname || '').includes(host)) log.warn(`Certificate has no SAN entry for ${host}. The app tolerates this, but a browser would not; regenerate it with subjectAltName (GUIDE.md section 6).`);
+  if (!(cert.subjectaltname || '').includes(host)) log.warn(`Certificate has no SAN entry for ${host}. The app tolerates this, but a browser would not; regenerate it with subjectAltName (docs/04-self-signed-ssl.md).`);
 
   if (flags.save) {
     const raw = readJson(app.file);

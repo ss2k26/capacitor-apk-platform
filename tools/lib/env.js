@@ -77,7 +77,7 @@ function doctor() {
 
   const jh = findJavaHome();
   const jv = javaVersion(jh);
-  if (jv == null) bad('Java (JDK) not found. Install Temurin JDK 21 and set JAVA_HOME (see GUIDE.md §2).');
+  if (jv == null) bad('Java (JDK) not found. Install Temurin JDK 21 and set JAVA_HOME (see docs/01-install-tools.md).');
   else if (jv < 17) bad(`Java ${jv} found – too old. Install JDK 21.`);
   else if (jv < 21) { log.ok(`Java ${jv} (${jh || 'PATH'})`); log.warn('Capacitor 8 targets Java 21. If the build complains about the Java version, install JDK 21.'); }
   else log.ok(`Java ${jv} (${jh || 'PATH'})`);
@@ -87,7 +87,7 @@ function doctor() {
   !kt.error && kt.status !== null ? log.ok('keytool available (release signing)') : bad('keytool not found (comes with the JDK).');
 
   const sdk = findSdk();
-  if (!sdk) bad('Android SDK not found. Install it and set ANDROID_HOME (see GUIDE.md §2).');
+  if (!sdk) bad('Android SDK not found. Install it and set ANDROID_HOME (see docs/01-install-tools.md).');
   else {
     log.ok(`Android SDK: ${sdk}`);
     const sub = (p) => exists(path.join(sdk, ...p));
@@ -100,7 +100,7 @@ function doctor() {
 
   if (IS_WIN) {
     const r = run('reg', ['query', 'HKLM\\SYSTEM\\CurrentControlSet\\Control\\FileSystem', '/v', 'LongPathsEnabled'], { capture: true, allowFail: true });
-    /0x1/.test(r.stdout || '') ? log.ok('Windows long paths enabled') : log.warn('Windows long paths NOT enabled – deep Gradle paths can fail. Enable it (GUIDE.md §2) or set PLATFORM_BUILD_DIR=C:\\b');
+    /0x1/.test(r.stdout || '') ? log.ok('Windows long paths enabled') : log.warn('Windows long paths NOT enabled – deep Gradle paths can fail. Enable it (docs/01-install-tools.md) or set PLATFORM_BUILD_DIR=C:\\b');
     if (ROOT.length > 40) log.warn(`This folder path is long (${ROOT.length} chars). Move the platform to something like C:\\apkplatform to avoid path-length errors.`);
   }
 

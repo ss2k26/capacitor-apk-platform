@@ -33,7 +33,7 @@ $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIden
 $hasWinget = [bool](Get-Command winget -ErrorAction SilentlyContinue)
 
 function Install-WithWinget($id, $label) {
-  if (-not $hasWinget) { throw "winget not found. Install $label manually (see GUIDE.md section 2) and re-run this script with the matching -Skip switch." }
+  if (-not $hasWinget) { throw "winget not found. Install $label manually (see docs/01-install-tools.md) and re-run this script with the matching -Skip switch." }
   winget install --id $id -e --silent --accept-package-agreements --accept-source-agreements
   if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne -1978335189) { throw "winget failed for $label (exit $LASTEXITCODE)" }
 }

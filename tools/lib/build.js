@@ -116,7 +116,7 @@ function build(name, opts = {}) {
 
   if (!exists(path.join(ROOT, 'node_modules', '@capacitor', 'cli'))) throw new CliError('Dependencies not installed. Run "npm install" in the platform folder first.');
   const sdk = env.findSdk();
-  if (!sdk) throw new CliError('Android SDK not found. Run "platform doctor" and see GUIDE.md section 2.');
+  if (!sdk) throw new CliError('Android SDK not found. Run "platform doctor" and see docs/01-install-tools.md');
   if (env.javaVersion(env.findJavaHome()) == null) throw new CliError('Java not found. Run "platform doctor".');
 
   let ks = null;
